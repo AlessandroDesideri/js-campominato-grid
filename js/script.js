@@ -19,20 +19,20 @@ const gridContainer = document.querySelector('.grid-container');
 // 'box' contenuti nel container
 let easyDifficulty = false;
 let mediumDifficulty = false;
-let hardDifficutly = false;
+let hardDifficulty = false;
 
 // Funzione per il cambio dimensione della grid
 // in base alla difficoltà scelta
 
 function gridDimension (boxContainer){
-    if(easy){
+    if(easyDifficulty){
 
         boxContainer.classList.add('easy-width');
         boxContainer.classList.remove('medium-width');
         boxContainer.classList.remove('hard-width');
         
     }
-    else if(medium){
+    else if(mediumDifficulty){
 
         boxContainer.classList.remove('easy-width');
         boxContainer.classList.add('medium-width');
@@ -51,9 +51,49 @@ function gridDimension (boxContainer){
 function boxCreator(container, index){
     const createdSquare = document.createElement('div');
     createdSquare.className = 'square';
-    createdSquare.innerHTML = index
-    gridHtml.append(createdSquare);
+    createdSquare.innerHTML = index;
+    gridContainer.append(createdSquare);
     createdSquare.addEventListener('click', function(){
         this.classList.toggle('cyan')
     })
 }
+
+// Limito la dimensione della griglia creata
+function maxGridDimension(maxDimension){
+    for(let i = 1; i <= maxDimension; i++){
+        boxCreator(gridContainer, i);
+    }
+}
+
+// Creazione eventi in base alla 
+// difficoltà scelta
+easy.addEventListener('click', function(){
+    if (easyDifficulty){
+        gridContainer.innerHTML='';
+        easyDifficulty = true;
+        mediumDifficulty = false;
+        hardDifficutly = false;
+        gridDimension(gridContainer);
+        maxGridDimension(easyGrid)
+    }
+})
+medium.addEventListener('click', function(){
+    if (!mediumDifficulty){
+        gridContainer.innerHTML='';
+        easyDifficulty = false;
+        mediumDifficulty = true;
+        hardDifficutly = false;
+        gridDimension(gridContainer);
+        maxGridDimension(mediumGrid)
+    }
+})
+hard.addEventListener('click', function(){
+    if (!hardDifficulty){
+        gridContainer.innerHTML='';
+        easyDifficulty = false;
+        mediumDifficulty = false;
+        hardDifficutly = true;
+        gridDimension(gridContainer);
+        maxGridDimension(hardGrid)
+    }
+})
