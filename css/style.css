@@ -40,3 +40,7 @@ button{
 .hard-width{
     width: 350px;
 }
+
+.cyan{
+    background: cyan;
+}

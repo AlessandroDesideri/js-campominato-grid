@@ -46,3 +46,14 @@ function gridDimension (boxContainer){
         boxContainer.classList.add('hard-width');
     }
 }
+
+// Funzione creazione box
+function boxCreator(container, index){
+    const createdSquare = document.createElement('div');
+    createdSquare.className = 'square';
+    createdSquare.innerHTML = index
+    gridHtml.append(createdSquare);
+    createdSquare.addEventListener('click', function(){
+        this.classList.toggle('cyan')
+    })
+}
