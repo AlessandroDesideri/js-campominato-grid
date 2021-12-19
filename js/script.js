@@ -21,4 +21,28 @@ let easyDifficulty = false;
 let mediumDifficulty = false;
 let hardDifficutly = false;
 
-// 
+// Funzione per il cambio dimensione della grid
+// in base alla difficoltà scelta
+
+function gridDimension (boxContainer){
+    if(easy){
+
+        boxContainer.classList.add('easy-width');
+        boxContainer.classList.remove('medium-width');
+        boxContainer.classList.remove('hard-width');
+        
+    }
+    else if(medium){
+
+        boxContainer.classList.remove('easy-width');
+        boxContainer.classList.add('medium-width');
+        boxContainer.classList.remove('hard-width');
+        
+    }
+    else{ 
+
+        boxContainer.classList.remove('easy-width');
+        boxContainer.classList.remove('medium-width');
+        boxContainer.classList.add('hard-width');
+    }
+}
