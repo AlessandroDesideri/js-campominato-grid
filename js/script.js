@@ -20,3 +20,5 @@ const gridContainer = document.querySelector('.grid-container');
 let easyDifficulty = false;
 let mediumDifficulty = false;
 let hardDifficutly = false;
+
+// 
