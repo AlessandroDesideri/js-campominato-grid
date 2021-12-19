@@ -68,7 +68,7 @@ function maxGridDimension(maxDimension){
 // Creazione eventi in base alla 
 // difficoltà scelta
 easy.addEventListener('click', function(){
-    if (easyDifficulty){
+    if (!easyDifficulty){
         gridContainer.innerHTML='';
         easyDifficulty = true;
         mediumDifficulty = false;
