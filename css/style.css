@@ -11,6 +11,9 @@ body{
 /* Non do dimensioni perche verranno assegnate 
    con la scelta del livello */
 .grid-container{
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
     background-color: #ccc;
     display: flex;
     flex-wrap: wrap;
